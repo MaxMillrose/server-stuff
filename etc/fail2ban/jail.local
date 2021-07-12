@@ -1,0 +1,46 @@
+[sshd-invaliduser]
+enabled = true
+maxretry = 0
+port    = ssh
+bantime = 15770000
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+
+
+[sshd-ban-root]
+enabled = true
+filter = sshd-ban-root
+port = ssh
+#logpath = /var/log/secure
+maxretry = 0
+bantime = 15770000
+# 15770000 sec = 6 months
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+
+
+[sshd]
+
+# To use more aggressive sshd modes set filter parameter "mode" in jail.local:
+# normal (default), ddos, extra or aggressive (combines all).                        
+# See "tests/files/logs/sshd" or "filter.d/sshd.conf" for usage example and details.
+#mode   = normal
+port    = ssh
+logpath = %(sshd_log)s
+loglevel = INFO
+backend = %(sshd_backend)s 
+
+
+[dropbear]                                                                     
+
+port     = ssh
+logpath  = %(dropbear_log)s
+backend  = %(dropbear_backend)s
+ 
+
+ [selinux-ssh]
+
+ port     = ssh                                                                                     
+ logpath  = %(auditd_log)s          
+
+

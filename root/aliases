@@ -1,0 +1,8 @@
+alias vim='nvim'
+alias SHOW_AUTH_LOG_SUCCESSFUL_LOGINS='grep "session opened " /var/log/auth.log'
+alias CHECK_AUTH_LOG_INVALID_USERS='grep "invalid user" /var/log/auth.log'
+alias CHECK_AUTH_LOG_SSHD='grep "sshd" /var/log/auth.log'
+alias TAIL_AUTH_LOG='tail -f -n15 /var/log/auth.log'
+alias TAIL_FAIL2BAN_LOG='tail -f -n 15 /var/log/fail2ban.log'
+alias NETSTAT='netstat -tunalp'
+alias EDIT_ALIASES='vim ~/.aliases && source ~/.aliases'
