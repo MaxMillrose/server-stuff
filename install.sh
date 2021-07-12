@@ -1,4 +1,12 @@
 #!/bin/bash
+export DEBIAN_FRONTEND=noninteractive 
+export DEBCONF_NONINTERACTIVE_SEEN=true
+
+echo "tzdata tzdata/Areas select Europe" > preseed.txt
+echo "" >> preseed.txt 
+debconf-set-selections preseed.txt 
+
+
 
 apt install software-properties-common -y &&
 add-apt-repository ppa:neovim-ppa/unstable && apt update &&
