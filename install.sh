@@ -17,8 +17,8 @@ apt install software-properties-common -y &&
 add-apt-repository ppa:neovim-ppa/unstable -y && apt update &&
 apt install apt-transport-tor tor fail2ban fish screen neovim -y &&
 echo "deb [arch=amd64] tor://sdscoq7snqtznauu.onion/torproject.org focal main" >> /etc/apt/sources.list
-service tor start
-apt update && apt update && apt dist-upgrade -y 
+service tor start && echo -e "\nsleeping 10 seconds to give Tor time to bootstrap" && sleep 10 
+apt update && apt dist-upgrade -y 
 
 
 
