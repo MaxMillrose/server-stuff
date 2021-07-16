@@ -20,7 +20,7 @@ apt install apt-transport-tor tor fail2ban fish screen neovim -y &&
 curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 echo "deb [arch=amd64] tor://sdscoq7snqtznauu.onion/torproject.org focal main" >> /etc/apt/sources.list
-service tor start && echo -e "\nsleeping 10 seconds to give Tor time to bootstrap" && sleep 10 
+service tor start && echo -e "\nsleeping 50 seconds to give Tor time to bootstrap" && sleep 50 
 #clear 
 apt update && apt dist-upgrade -y 
 
