@@ -14,9 +14,9 @@ services:
 
   passbolt:
     container_name: passbolt
-    image: passbolt/passbolt:latest-ce
+    #image: passbolt/passbolt:latest-ce
     #Alternatively you can use rootless:
-    #image: passbolt/passbolt:latest-ce-non-root
+    image: passbolt/passbolt:latest-ce-non-root
     restart: unless-stopped
     depends_on:
       - db
@@ -40,8 +40,11 @@ services:
       ]
     # outside:inside 
     ports:
-     - 8080:80
-     - 8433:433
+      #- 8080:80
+      #- 8433:433
+      # Non-Root ports
+      - 8080:8080
+      - 8443:4433
 
   snowflake-proxy:
       network_mode: host
